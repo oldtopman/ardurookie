@@ -1,0 +1,122 @@
+Cmp-Mod V01 Created by CvPcb (2013-mar-25)-stable date = Sun 16 Nov 2014 08:38:53 AM MST
+
+BeginCmp
+TimeStamp = /545EEC33;
+Reference = C1;
+ValeurCmp = 22pF;
+IdModule  = _C1-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EEC42;
+Reference = C2;
+ValeurCmp = 22pF;
+IdModule  = _C1-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EEBB8;
+Reference = C3;
+ValeurCmp = 0.1uF;
+IdModule  = _C1-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /545F188D;
+Reference = C4;
+ValeurCmp = 0.1uF;
+IdModule  = _C1-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /546271A3;
+Reference = C5;
+ValeurCmp = 0.1uF;
+IdModule  = _C1-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /5464D086;
+Reference = C6;
+ValeurCmp = 0.1uF;
+IdModule  = _C1-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EEB25;
+Reference = IC1;
+ValeurCmp = ARDUROOKIE-ATMEGA328P-P;
+IdModule  = _DIP-28__300_ELL-thin;
+EndCmp
+
+BeginCmp
+TimeStamp = /54625803;
+Reference = JP1;
+ValeurCmp = CONN_6;
+IdModule  = _PIN_ARRAY-6X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EF0AA;
+Reference = JP2;
+ValeurCmp = CONN_6;
+IdModule  = _PIN_ARRAY-6X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EF0B9;
+Reference = JP3;
+ValeurCmp = CONN_8;
+IdModule  = _cPIN_ARRAY-8x1;
+EndCmp
+
+BeginCmp
+TimeStamp = /54625CD6;
+Reference = JP4;
+ValeurCmp = PWR;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /54642219;
+Reference = JP5;
+ValeurCmp = AUX_PWR;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /545F1A0C;
+Reference = JP6;
+ValeurCmp = ICSP;
+IdModule  = _c-thin-pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /545F12D3;
+Reference = JP7;
+ValeurCmp = FTDI;
+IdModule  = _PIN_ARRAY-6X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5464D0C1;
+Reference = JP8;
+ValeurCmp = RST;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EEB6E;
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = _R4-thin-nonpolar;
+EndCmp
+
+BeginCmp
+TimeStamp = /545EEB9F;
+Reference = X1;
+ValeurCmp = CRYSTAL;
+IdModule  = HC-18UV;
+EndCmp
+
+EndListe

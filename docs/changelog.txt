@@ -1,0 +1,46 @@
+|<---------------------------------------------------------------------------->|
+
++==========+
+|Changelog:|
++==========+
+
+  The first number indicates the number of versions that have been produced.
+This number appears on the pcb. The second number indicates the number of major
+board changes that have occurred solely on the computer, in the pcb software.
+This number also appears on the pcb. The third digit is the number of times the
+board has been sent to the board house for production. Since no actual board
+changes occur for this revision, this number appears in very few places.
+
+  Version 12.2.7 would indicate the 12th version of the board that has been
+produced - 11 prior versions have been manufactured. Two major redesigns have
+taken place on the computer since the 11.x.x series, and this is the seventh
+version I've tried to send to the board house for production.
+
+  Versions prior to 0.6 are somewhat inaccurate, as I was not keeping track
+of the design/version numbers before then.
+
+Version 0.0
+  Initial layout on an arduino-sized board.
+
+Version 0.1
+  Changed to resemble arduino, but on a 1.95"x1.95" board.
+
+Version 0.2
+  Changed to throw out the arduino footprint.
+
+Version 0.3
+  Changed to make the IO pins usable with an IDE connector.
+
+Version 0.4
+  Un-rotated IC.
+
+Version 0.5
+  Rotated upper IO header to greatly simplify routing.
+
+Version 0.6.0
+  Added decoupling capacitors, optimized layout.
+  "Shirley Temple" sent to production.
+  
+Version 0.6.1
+  Changed via size for an acceptable annular ring with.
+  Now 12mil drill with 35mil plating.

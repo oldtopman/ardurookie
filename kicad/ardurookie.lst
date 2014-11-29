@@ -1,0 +1,42 @@
+eeschema (2013-mar-25)-stable  >> Creation date: Mon 17 Nov 2014 11:06:54 PM MST
+#Cmp ( order = Reference )
+| C1         22pF        
+| C2         22pF        
+| C3         0.1uF       
+| C4         0.1uF       
+| C5         0.1uF       
+| C6         0.1uF       
+| IC1        ARDUROOKIE-ATMEGA328P-P
+| JP1        CONN_6      
+| JP2        CONN_6      
+| JP3        CONN_8      
+| JP4        PWR         
+| JP5        AUX_PWR     
+| JP6        ICSP        
+| JP7        FTDI        
+| JP8        RST         
+| R1         10k         
+| X1         CRYSTAL     
+#End Cmp
+
+#Cmp ( order = Value )
+| 22pF         C1        
+| 22pF         C2        
+| 0.1uF        C3        
+| 0.1uF        C4        
+| 0.1uF        C5        
+| 0.1uF        C6        
+| ARDUROOKIE-ATMEGA328P-P IC1       
+| CONN_6       JP1       
+| CONN_6       JP2       
+| CONN_8       JP3       
+| PWR          JP4       
+| AUX_PWR      JP5       
+| ICSP         JP6       
+| FTDI         JP7       
+| RST          JP8       
+| 10k          R1        
+| CRYSTAL      X1        
+#End Cmp
+
+#End List

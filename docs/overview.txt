@@ -1,0 +1,118 @@
+|<---------------------------------------------------------------------------->|
+
+This is the documentation for the ardurookie board v0.6 "Shirley Temple".
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License. A copy of this license is included in license.txt.
+
+|<---------------------------------------------------------------------------->|
+
+Table of Contents:
+
+Chapter 1:
+  Notes on board design
+  
+Chapter 2:
+  Board assembly
+
+Chapter 3:
+  Manufacturing the board
+
+components.txt:
+  Component List & Descriptions
+
+changelog.txt:
+  Version History
+
+license.txt
+  The CC-BY-SA license that covers the ardurookie.
+
+|<---------------------------------------------------------------------------->|
+
++==========+
+|Chapter 1:|
++==========+
+
+  This board is a very simple design. I created it for several reasons.
+
+  First:
+The board must be suitable for low-power applications. There are many papers
+online detailing the outrageously low power requirements of a sleeping 328p.
+Unfortunately, most boards draw more than three hundred milliamps in
+addition to the standalone chip. This board is sparse for that reason exactly.
+
+  Second:
+The board must be cheap enough to build into a project. Often, a completed
+project needs a custom, hand-built board to hold and power the 328p. This board
+aims to be cheap enough to be built into a project easily and affordably.
+
+  There are several other considerations that went into the board design.
+Wherever possible, quality was built into the board. C5 and C6 are decoupling
+capacitors that should provide a silky-smooth power supply, even as the provided
+power drifts below the minimum voltage for the chip. X1 has been isolated from
+other board components to avoid interference, while still being mounted with
+symmetrical tracelength.
+
+  Board complexity has also been kept to a minimum. Cheap boardhouses are not
+quality boardhouses, so this pcb has been designed for production by any
+manufacturer.
+
+  Finally, the board has been designed to operate with the bare minimum of
+electrical components. The only ones required are R1, C3, and IC1.
+
+|<---------------------------------------------------------------------------->|
+
++==========+
+|Chapter 2:|
++==========+
+
+  Most of this board does not have to be assembled for proper operation.
+As such, this portion of the documentation is modularized for your convience.
+Follow the "Core Build" guide, then go to the section for the feature you want
+and follow those directions.
+
+Core Build:
+  This is the bare minimum required to get the board running. Note that without
+  the crystal, you need to have a modified bootloader specificing the usage of
+  one of the internal oscillators.
+
+  Solder IC1 to the board. This should be a ATMEGA328P, but several of their
+  chips are pin-compatible, such as the ATMEGA328, or the ATMEGA128/P
+
+  Solder R1 to the board. This should be a resistor with an approximate value
+  of 10k ohms. The pad is sized for 1/2 watt, so smaller ones should fit easily.
+
+  Solder C3 to the board. This must be a ceramic capacitor with a value of 0.1uF
+  It should be marked with a value of "104".
+
+Optional Build:
+  These are extra pieces of the board that were added as part of the
+  over-engineering process. These are highly optional, but recommended,
+  especially if you have strange problems with your build.
+
+  Solder C5 and C6 to the board. These are decoupling capacitors that serve two
+  purposes. First, to provide a stable power supply to IC1 as draw goes up and
+  down when pins turn on and off. Second, to keep RF emissions to a minimum.
+
+Frequency crystal:
+  This is important if you plan to use the board with a stock Arduino
+  bootloader, or if you want the chip to operate at 16/20MHz, (or if you
+  accidentally set the fuses to use an external oscillator).
+
+  Solder X1 to the board. This should be a frequency crystal of 16 or 20MHz.
+  Higher values might work, but will likely cause serial communication problems.
+
+  Solder C1 and C2 to the board. These are required for X1 to operate correctly.
+  These are 22pF capacitors (note the p).
+
+
+FTDI Reset:
+  If you're using an FTDI breakout board like the ones sparkfun sells
+  ( https://www.sparkfun.com/products/9716 ), you'll want this. At the very
+  minimum, the FTDI header is a handy breakout for the tx/rx pins from the chip.
+
+  Solder C4 to the board. It should have a value of 0.1uF and be marked "104"
+  This allows the ftdi daughterboard to reset the 328p before writing to it.
+
+Other headers:
+  Every other hole on the Ardurookie can be populated at your leisure. Run wires
+  directly to it, or install pin headers with a 0.1" pitch.

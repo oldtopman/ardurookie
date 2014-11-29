@@ -1,0 +1,82 @@
+|<---------------------------------------------------------------------------->|
+
++===============+
+|Component List:|
++===============+
+
+  This is a simple breakdown of which components do what. If you can't read the
+schematic, or are just too lazy, or want to know what I was thinking, this is a
+great place to start.
+  Components suffixed with '=' are critical to board operation, and are
+non-optional.
+
+C1-----22pF
+  This is a loading capacitor (probably) for the frequency crystal.
+  If you have the crystal, you need this capacitor.
+
+C2-----22pF
+  This is a loading capacitor (probably) for the frequency crystal.
+  If you have the crystal, you need this capacitor.
+
+C3=====0.1uF
+  You need this for the board to be stable. I don't know how exactly this works,
+but if it isn't present, the board won't work very well.
+
+C4-----0.1uF
+  This allows the FTDI boards to auto-reset the chip when you upload a sketch.
+Not required, but certainly a welcome feature if you'll be using it frequently.
+
+C5-----0.1uF
+  This is a decoupling capacitor. If you have a very clean power supply *and* you
+are not operating at the lower extremes of stable voltages for your chip, you
+will probably be able to omit this. It also reduces emitted RF significantly.
+
+C6-----0.1uF
+  This is a decoupling capacitor. If you have a very clean power supply *and* you
+are not operating at the lower extremes of stable voltages for your chip, you
+will probably be able to omit this. It also reduces emitted RF significantly.
+
+
+IC1====ATMEGA328P (Or similar)
+  Main chip. Use the ATMEGA328 series, or any other chip that shares the pinout.
+I reccommend the 328P for its low power states.
+
+JP1----CONN_6
+  Holes for connections. You can put pin-headers here, or just wire it up as you
+see fit. This one is for IO8 - IO13.
+
+JP2----CONN_6
+  Holes for connections. You can put pin-headers here, or just wire it up as you
+see fit. This one is for AD0 - AD5.
+
+JP3----CONN_8
+  Holes for connections. You can put pin-headers here, or just wire it up as you
+see fit. This one is for IO0 - IO7.
+
+JP4----PWR
+  This is a power header, conviently located near the other IO pins.
+
+JP5----AUX_PWR
+  This is a power header, conviently located away from the IO pins.
+
+JP6----ICSP
+  This port should be populated with standard 0.1" male header pins. It is
+designed to be a standard ICSP pinout, so the bootloader can be changed with
+the chip still soldered into the board.
+
+JP7----FTDI
+  This port should be populated with standard 0.1" male header pins. It is
+designed to be compatible with Sparkfun's FTDI breakouts.
+https://www.sparkfun.com/products/9716
+
+JP8----RST
+  This is a hole for reset. You can put a pin-header here, or just wire it up as
+you see fit.
+
+R1=====10k
+  This prevents the board from going into reset while you're trying to use it.
+This component can't really be omitted, though the value is fairly flexible.
+
+X1-----CRYSTAL
+  This is an external crystal for the ATMEGA. If you decide to use this component,
+be sure to populate both C1 and C2 on the board.
