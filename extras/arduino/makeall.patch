@@ -1,0 +1,14 @@
+--- makeall	2014-12-09 11:22:23.680465880 -0700
++++ makeall-ardurookie	2014-12-09 11:24:15.623459630 -0700
+@@ -18,3 +18,11 @@
+ make mega
+ make atmega88
+ make luminet
++#
++# alternate clock frequencies for optiboot.
++make atmega328_16khz
++make atmega328_125khz
++make atmega328_1mhz
++make atmega328_2mhz
++make atmega328_8mhz
++

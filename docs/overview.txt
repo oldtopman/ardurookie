@@ -9,13 +9,19 @@ International License. A copy of this license is included in license.txt.
 Table of Contents:
 
 Chapter 1:
-  Notes on board design
+  Notes on the ardurookie design
   
 Chapter 2:
-  Board assembly
+  ardurookie assembly
 
 Chapter 3:
-  Manufacturing the board
+  Manufacturing the ardurookie
+
+Chapter 4:
+  Using the ardurookie
+
+arduino.txt
+  Using the ardurookie with the Arduino IDE
 
 components.txt:
   Component List & Descriptions
@@ -35,7 +41,7 @@ license.txt
   This board is a very simple design. I created it for several reasons.
 
   First:
-The board must be suitable for low-power applications. There are many papers
+  The board must be suitable for low-power applications. There are many papers
 online detailing the outrageously low power requirements of a sleeping 328p.
 Unfortunately, most boards draw more than three hundred milliamps in
 addition to the standalone chip. This board is sparse for that reason exactly.
@@ -116,3 +122,62 @@ FTDI Reset:
 Other headers:
   Every other hole on the Ardurookie can be populated at your leisure. Run wires
   directly to it, or install pin headers with a 0.1" pitch.
+
+|<---------------------------------------------------------------------------->|
+
++==========+
+|Chapter 3:|
++==========+
+
+  The ardurookie was designed with simplicity in mind. As such, it can be
+manufactured by a variety of low quality board houses with little to no
+modifications. I recommend hackvana, run by Mitch Davis. He's done a fabulous
+job producing pcbs. Information can be found here: http://hackvana.com/guide
+
+  Mine are produced with blue soldermask, 1.6mm width, on doublesided boards.
+
+|<---------------------------------------------------------------------------->|
+
++==========+
+|Chapter 4:|
++==========+
+
+  Using the board is simple. Build the board according to the build instructions
+then populate the ICSP header. You should then set the fuses and burn a
+bootloader if you like. If you plan to use the Arduino IDE, please see arduino.txt
+
+  If you use a 328p programmed for an Arduino, you will need to set the fuses
+BEFORE you move it to the ardurookie IF you do not populate X1.
+
+Here are my fuse settings:
+
+16MHz with external crystal:
+  lfuse:0xFF
+  hfuse:0xD6
+  efuse:0x06
+
+8MHz with internal crystal:
+  lfuse:0xE2
+  hfuse:0xD6
+  efuse:0x06
+
+2MHz with external crystal:
+  lfuse:0x5E
+  hfuse:0xD6
+  efuse:0x06
+
+1MHz with internal crystal:
+  lfuse:0x62
+  hfuse:0xD6
+  efuse:0x07
+
+125KHz with internal crystal:
+  lfuse:0xE3
+  hfuse:0xD6
+  efuse:0x07
+
+16KHz with internal crystal:
+  lfuse:0x63
+  hfuse:0xD6
+  efuse:0x07
+

@@ -1,5 +1,11 @@
 |<---------------------------------------------------------------------------->|
 
+This is the documentation for the ardurookie board v0.6 "Shirley Temple".
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License. A copy of this license is included in license.txt.
+
+|<---------------------------------------------------------------------------->|
+
 +===============+
 |Component List:|
 +===============+

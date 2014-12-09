@@ -1,0 +1,105 @@
+--- Makefile	2014-12-09 11:18:00.961480550 -0700
++++ Makefile-ardurookie	2014-12-09 11:02:18.460533176 -0700
+@@ -418,6 +418,102 @@
+ luminet_isp: EFUSE = FE
+ luminet_isp: isp
+ 
++
++# ATmega328 @ 15.625KHz Internal (300 baud) EXPERIMENTAL
++#
++atmega328_16khz: TARGET = atmega328
++atmega328_16khz: MCU_TARGET = atmega328p
++atmega328_16khz: CFLAGS += '-DLED_START_FLASHES=3' '-DBAUD_RATE=300'
++atmega328_16khz: AVR_FREQ = 15625L
++atmega328_16khz: LDSECTIONS = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
++atmega328_16khz: $(PROGRAM)_atmega328_16khz.hex
++atmega328_16khz: $(PROGRAM)_atmega328_16khz.lst
++
++atmega328_16khz_isp: atmega328
++atmega328_16khz_isp: TARGET = atmega328
++atmega328_16khz_isp: MCU_TARGET = atmega328p
++
++atmega328_16khz_isp: LFUSE = 63
++atmega328_16khz_isp: HFUSE = D6
++atmega328_16khz_isp: EFUSE = 07
++atmega328_16khz_isp: isp
++
++# ATmega328 @ 125KHz Internal (1200 baud)
++#
++atmega328_125khz: TARGET = atmega328
++atmega328_125khz: MCU_TARGET = atmega328p
++atmega328_125khz: CFLAGS += '-DLED_START_FLASHES=3' '-DBAUD_RATE=1200'
++atmega328_125khz: AVR_FREQ = 125000L
++atmega328_125khz: LDSECTIONS = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
++atmega328_125khz: $(PROGRAM)_atmega328_125khz.hex
++atmega328_125khz: $(PROGRAM)_atmega328_125khz.lst
++
++atmega328_125khz_isp: atmega328
++atmega328_125khz_isp: TARGET = atmega328
++atmega328_125khz_isp: MCU_TARGET = atmega328p
++
++atmega328_125khz_isp: LFUSE = E3
++atmega328_125khz_isp: HFUSE = D6
++atmega328_125khz_isp: EFUSE = 07
++atmega328_125khz_isp: isp
++
++# ATmega328 @ 1MHz Internal (9600 baud)
++#
++atmega328_1mhz: TARGET = atmega328
++atmega328_1mhz: MCU_TARGET = atmega328p
++atmega328_1mhz: CFLAGS += '-DLED_START_FLASHES=3' '-DBAUD_RATE=9600'
++atmega328_1mhz: AVR_FREQ = 1000000L
++atmega328_1mhz: LDSECTIONS = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
++atmega328_1mhz: $(PROGRAM)_atmega328_1mhz.hex
++atmega328_1mhz: $(PROGRAM)_atmega328_1mhz.lst
++
++atmega328_1mhz_isp: atmega328
++atmega328_1mhz_isp: TARGET = atmega328
++atmega328_1mhz_isp: MCU_TARGET = atmega328p
++
++atmega328_1mhz_isp: LFUSE = 62
++atmega328_1mhz_isp: HFUSE = D6
++atmega328_1mhz_isp: EFUSE = 07
++atmega328_1mhz_isp: isp
++
++# ATmega328 @ 2MHz External/2 (19200 baud)
++#
++atmega328_2mhz: TARGET = atmega328
++atmega328_2mhz: MCU_TARGET = atmega328p
++atmega328_2mhz: CFLAGS += '-DLED_START_FLASHES=3' '-DBAUD_RATE=19200'
++atmega328_2mhz: AVR_FREQ = 2000000L
++atmega328_2mhz: LDSECTIONS = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
++atmega328_2mhz: $(PROGRAM)_atmega328_2mhz.hex
++atmega328_2mhz: $(PROGRAM)_atmega328_2mhz.lst
++
++atmega328_2mhz_isp: atmega328
++atmega328_2mhz_isp: TARGET = atmega328
++atmega328_2mhz_isp: MCU_TARGET = atmega328p
++
++atmega328_2mhz_isp: LFUSE = 5E
++atmega328_2mhz_isp: HFUSE = D6
++atmega328_2mhz_isp: EFUSE = 06
++atmega328_2mhz_isp: isp
++
++# ATmega328 @ 8MHz Internal (57600 baud)
++#
++atmega328_8mhz: TARGET = atmega328
++atmega328_8mhz: MCU_TARGET = atmega328p
++atmega328_8mhz: CFLAGS += '-DLED_START_FLASHES=3' '-DBAUD_RATE=57600'
++atmega328_8mhz: AVR_FREQ = 8000000L
++atmega328_8mhz: LDSECTIONS = -Wl,--section-start=.text=0x7e00 -Wl,--section-start=.version=0x7ffe
++atmega328_8mhz: $(PROGRAM)_atmega328_8mhz.hex
++atmega328_8mhz: $(PROGRAM)_atmega328_8mhz.lst
++
++atmega328_8mhz_isp: atmega328
++atmega328_8mhz_isp: TARGET = atmega328
++atmega328_8mhz_isp: MCU_TARGET = atmega328p
++
++atmega328_8mhz_isp: LFUSE = E2
++atmega328_8mhz_isp: HFUSE = D6
++atmega328_8mhz_isp: EFUSE = 06
++atmega328_8mhz_isp: isp
++
+ #
+ # Generic build instructions
+ #

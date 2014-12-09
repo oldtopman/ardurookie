@@ -1,0 +1,102 @@
+--- boards.txt	2014-10-01 08:57:49.000000000 -0600
++++ boards-ardurookie.txt	2014-12-09 13:14:32.855090143 -0700
+@@ -735,3 +735,99 @@
+ robotMotor.build.variant=robot_motor
+ robotMotor.build.extra_flags={build.usb_flags}
+ 
++##############################################################
++
++ardurookie.name=ardurookie
++
++ardurookie.upload.tool=avrdude
++ardurookie.upload.protocol=arduino
++ardurookie.upload.maximum_size=32256
++ardurookie.upload.maximum_data_size=2048
++
++ardurookie.bootloader.tool=avrdude
++ardurookie.bootloader.unlock_bits=0x3F
++ardurookie.bootloader.lock_bits=0x0F
++
++ardurookie.build.mcu=atmega328p
++ardurookie.build.core=arduino
++ardurookie.build.variant=standard
++ardurookie.build.board=AVR_ARDUROOKIE
++
++## ardurookie, ATmega328p @ 16MHz
++## ------------------------------
++ardurookie.menu.cpu.16MHzardurookie=328p w/Crystal (16MHz)
++ardurookie.menu.cpu.16MHzardurookie.upload.speed=115200
++
++ardurookie.menu.cpu.16MHzardurookie.bootloader.low_fuses=0xFF
++ardurookie.menu.cpu.16MHzardurookie.bootloader.high_fuses=0xD6
++ardurookie.menu.cpu.16MHzardurookie.bootloader.extended_fuses=0x06
++ardurookie.menu.cpu.16MHzardurookie.bootloader.file=optiboot/optiboot_atmega328.hex
++
++ardurookie.menu.cpu.16MHzardurookie.build.f_cpu=16000000L
++
++## ardurookie, ATmega328p @ 8MHz (Internal)
++## ------------------------------
++ardurookie.menu.cpu.8MHzardurookie=328p (8MHz)
++ardurookie.menu.cpu.8MHzardurookie.upload.speed=57600
++
++ardurookie.menu.cpu.8MHzardurookie.bootloader.low_fuses=0xE2
++ardurookie.menu.cpu.8MHzardurookie.bootloader.high_fuses=0xD6
++ardurookie.menu.cpu.8MHzardurookie.bootloader.extended_fuses=0x06
++ardurookie.menu.cpu.8MHzardurookie.bootloader.file=optiboot/optiboot_atmega328_8mhz.hex
++
++ardurookie.menu.cpu.8MHzardurookie.build.f_cpu=8000000L
++
++## ardurookie, ATmega328p @ 2MHz
++## ----------------------------------------
++ardurookie.menu.cpu.2MHzardurookie=328p w/Crystal (2MHz)
++ardurookie.menu.cpu.2MHzardurookie.upload.speed=19200
++
++ardurookie.menu.cpu.2MHzardurookie.bootloader.low_fuses=0x5E
++ardurookie.menu.cpu.2MHzardurookie.bootloader.high_fuses=0xD6
++ardurookie.menu.cpu.2MHzardurookie.bootloader.extended_fuses=0x06
++ardurookie.menu.cpu.2MHzardurookie.bootloader.file=optiboot/optiboot_atmega328_2mhz.hex
++
++ardurookie.menu.cpu.2MHzardurookie.build.f_cpu=2000000L
++
++## ardurookie, ATmega328p @ 1MHz
++## ----------------------------------------
++ardurookie.menu.cpu.1MHzardurookie=328p (1MHz)
++ardurookie.menu.cpu.1MHzardurookie.upload.speed=9600
++
++ardurookie.menu.cpu.1MHzardurookie.bootloader.low_fuses=0x62
++ardurookie.menu.cpu.1MHzardurookie.bootloader.high_fuses=0xD6
++ardurookie.menu.cpu.1MHzardurookie.bootloader.extended_fuses=0x07
++ardurookie.menu.cpu.1MHzardurookie.bootloader.file=optiboot/optiboot_atmega328_1mhz.hex
++
++ardurookie.menu.cpu.1MHzardurookie.build.f_cpu=1000000L
++
++## ardurookie, ATmega328p @ 125KHz
++## ----------------------------------------
++ardurookie.menu.cpu.125KHzardurookie=328p (125KHz)
++ardurookie.menu.cpu.125KHzardurookie.upload.speed=1200
++
++ardurookie.menu.cpu.125KHzardurookie.bootloader.low_fuses=0xE3
++ardurookie.menu.cpu.125KHzardurookie.bootloader.high_fuses=0xD6
++ardurookie.menu.cpu.125KHzardurookie.bootloader.extended_fuses=0x07
++ardurookie.menu.cpu.125KHzardurookie.bootloader.file=optiboot/optiboot_atmega328_125khz.hex
++
++ardurookie.menu.cpu.125KHzardurookie.build.f_cpu=125000L
++
++## ardurookie, ATmega328p @ 16KHz
++## ----------------------------------------
++
++### !!!WARNING!!! ###
++# It can be very difficult to program a chip with a frequency this low!
++# Make sure your programmer is capable of communicating at these speeds.
++
++ardurookie.menu.cpu.16KHzardurookie=328p (16KHz)
++ardurookie.menu.cpu.16KHzardurookie.upload.speed=300
++
++ardurookie.menu.cpu.16KHzardurookie.bootloader.low_fuses=0x63
++ardurookie.menu.cpu.16KHzardurookie.bootloader.high_fuses=0xD6
++ardurookie.menu.cpu.16KHzardurookie.bootloader.extended_fuses=0x07
++ardurookie.menu.cpu.16KHzardurookie.bootloader.file=optiboot/optiboot_atmega328_16khz.hex
++
++ardurookie.menu.cpu.16KHzardurookie.build.f_cpu=15625L
++
++

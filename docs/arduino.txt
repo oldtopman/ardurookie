@@ -1,0 +1,52 @@
+|<---------------------------------------------------------------------------->|
+
+This is the documentation for the ardurookie board v0.6 "Shirley Temple".
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License. A copy of this license is included in license.txt.
+
+Arduino is copyright Arduino SA.
+|<---------------------------------------------------------------------------->|
+
++===========================+
+|Configuring the Arduino IDE|
++===========================+
+
+  The Arduino development environment is the most commonplace IDE for
+programming AVR chips, such as the ardurookie. Due to the simplicity of the
+official Arduino boards, and the flexibility of the IDE, you can program
+the ardurookie from within the Arduino IDE with a few slight modifications.
+
+  The process is extremely simple. Several files need to be patched in order
+for full support to be added. These patches can be found in the
+extras/arduino directory. You need to locate the boards.txt file in the hardware
+directory, and the Makefile in hardware/arduino/avr/bootloaders/optiboot/, then
+apply the patches to those files. After restarting the IDE, the board should
+appear in the "Boards" list, and the "Processor" menu will allow you to select
+your clock speed.
+
+  If you don't have the utility patch, for some reason, the contents of those
+files can be pasted into their files with little difficulty.
+
++=============================+
+|Using the Optiboot Bootloader|
++=============================+
+
+  In addition to the IDE, the Arduino development environment includes a
+bootloader for use with most AVR chips. In the modified Makefile, there are
+several different bootloaders for use with the ATmega328p in the ardurookie.
+No changes have been made to the bootloader, these simply provide alternate
+clock speeds for the microcontroller.
+
+!!!WARNING!!!
+  If you burn a bootloader that requires an external frequency crystal, you
+MUST have a crystal on the board. Without one, the microcontroller WILL NOT WORK
+, necessitating the removal of the chip, or the installation of a crystal.
+!!!WARNING!!!
+
++=====================+
+|Using the Arduino IDE|
++=====================+
+
+  After modifying boards.txt, and flashing the Optiboot bootloader, the
+ardurookie can be programmed from the Arduino IDE by selecting the "ardurookie"
+board, then changing the "Processor" to match the bootloader and fuses.
